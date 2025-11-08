@@ -1,3 +1,8 @@
+# Official uLisp for PicoCalc
+
+https://github.com/technoblogy/ulisp-picocalc 
+
+
 # How to compile uLisp 
 
 uLisp for PicoCalc uses [Arduino IDE](https://www.arduino.cc/en/software) for development  
@@ -77,9 +82,6 @@ It should be noted that uLisp's default serial port speed is **9600**
 
 
 ## Pre-compiled uf2
-https://github.com/clockworkpi/PicoCalc/blob/master/Bin/PicoCalc%20SD/firmware/PicoCalc_uLisp_v1.0.uf2
+https://github.com/clockworkpi/PicoCalc/blob/master/Bin/PicoCalc%20SD/firmware/PicoCalc_uLisp_v1.1.uf2
 
-# Official uLisp for PicoCalc
-
-https://github.com/technoblogy/ulisp-picocalc
 
