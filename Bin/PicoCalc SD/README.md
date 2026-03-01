@@ -1,5 +1,5 @@
 # PicoCalc SD v0.6
-
+```
 PicoCalc SD/
 ├── BellLabs_Fine.mp3
 ├── bifdiag.bas
@@ -114,6 +114,7 @@ PicoCalc SD/
 │   └── settings
 └── README.md
 
+```
 
 Since PicoCalc SD v0.6 we used [uf2loader](https://github.com/pelrun/uf2loader.git) as main loader.
 
@@ -129,23 +130,28 @@ Important files:
   uf2loader Menu UI, it is a very important file, do not delete or edit it unless you know what you are doing.
 
 
-## Path: pico1-apps/PicoCalc_Fuzix_v1.0.uf2 (Download)
+## PicoCalc_Fuzix_v1.0.uf2  
 
 [Fuzix](https://github.com/EtchedPixels/FUZIX.git) is an open-source, lightweight Unix-like operating system specifically designed for 8-bit and other resource-constrained processors.  
 
-Patches for PicoCalc are [here](https://github.com/clockworkpi/PicoCalc/tree/master/Code/FUZIX)
+Patches for PicoCalc are [here](https://github.com/clockworkpi/PicoCalc/tree/master/Code/FUZIX)  
+UF2 Path:   /pico1-apps/PicoCalc_Fuzix_v1.0.uf2 ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))  
 
-## Path: pico1-apps/PicoCalc_NES_v1.0.uf2 (Download)
+## pico1-apps/PicoCalc_NES_v1.0.uf2 
 
 A simple NES emulator for PicoCalc, it will scan all nes files in the root of SD card.  
 Given the resource constraints of the Pico, it is recommended to only run NES games that are less than **44KB** in size.
 
-## Path: pico1-apps/picolua_daf20a2.uf2 (Download)  
+UF2 Path:  /pico1-apps/PicoCalc_NES_v1.0.uf2 ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))  
+
+## picolua_daf20a2.uf2  
 
 https://github.com/Lana-chan/picocalc_lua  
-A Lua interpreter for PicoCalc. It contains a REPL, basic API to draw graphics, read keys and access the SD filesystem.
+A Lua interpreter for PicoCalc. It contains a REPL, basic API to draw graphics, read keys and access the SD filesystem.  
 
-## Path: pico1-apps/Picoware_v1.6.9.uf2 (Download)  
+UF2 Path: /pico1-apps/picolua_daf20a2.uf2 ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))   
+
+## Picoware_v1.6.9.uf2  
 
 https://github.com/jblanked/Picoware
 
@@ -153,28 +159,34 @@ An Open-source custom firmware for the PicoCalc, Video Game Module, and other Ra
  
 Here is the version based on MicroPython.  
 
-## Path: pico1-apps/phyllosoma_kb.uf2 (Download)  
+UF2 Path: /pico1-apps/Picoware_v1.6.9.uf2 ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))    
+
+## phyllosoma_kb.uf2   
 
 [MachiKania Phyllosoma](https://github.com/machikania/phyllosoma/releases) is a BASIC compiler for ARMv6-M with excellent performance., especially for Raspberry Pi Pico.  
 
+UF2 Path: /pico1-apps/phyllosoma_kb.uf2   ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))   
 
-## Path: pico1-apps/PicoCalc_MP3Player_v0.5.uf2 (Download)
+## PicoCalc_MP3Player_v0.5.uf2
 
 [PicoCalc_MP3Player](https://github.com/clockworkpi/PicoCalc/tree/master/Code/MP3Player)  is a simple MP3 playback program based on the [YAHAL](https://git.fh-aachen.de/Terstegge/YAHAL
 
 ) framework.
 
+UF2 Path: /pico1-apps/PicoCalc_MP3Player_v0.5.uf2 ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))    
 
-## Path: pico1-apps/PicoCalc_uLisp_v1.1.uf2 (Download)
+## PicoCalc_uLisp_v1.1.uf2 
 
 http://www.ulisp.com/show?56ZO
 
 A self-contained Lisp computer for PicoCalc.   
+UF2 Path: /pico1-apps/PicoCalc_uLisp_v1.1.uf2 ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))   
 
-## Path: pico1-apps/PicoMite_v6.02.01b4_beta.uf2 (Download)
+## PicoMite_v6.02.01b4_beta.uf2  
 
 [The PicoMite](https://geoffg.net/picomite.html) is a complete operating system with a Microsoft BASIC compatible interpreter and extensive hardware support including touch sensitive LCD panels, SD Cards, WiFi/Internet and much more.
 
+UF2 Path: /pico1-apps/PicoMite_v6.02.01b4_beta.uf2 ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))   
 
 ```
 Copyright and Acknowledgments
@@ -198,7 +210,7 @@ the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
 
-## Path: pico1-apps/MicroPython_fa8b24c.uf2 (Download)
+##  MicroPython_fa8b24c.uf2  
 
 https://github.com/zenodante/PicoCalc-micropython-driver
 
@@ -206,4 +218,5 @@ https://github.com/zenodante/PicoCalc-micropython-driver
 
 Here is the MicroPython Drivers compatible with PicoCalc.
 
+UF2 Path: /pico1-apps/MicroPython_fa8b24c.uf2  ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))   
 
