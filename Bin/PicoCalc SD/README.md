@@ -135,14 +135,14 @@ Important files:
 [Fuzix](https://github.com/EtchedPixels/FUZIX.git) is an open-source, lightweight Unix-like operating system specifically designed for 8-bit and other resource-constrained processors.  
 
 Patches for PicoCalc are [here](https://github.com/clockworkpi/PicoCalc/tree/master/Code/FUZIX)  
-UF2 Path:   /pico1-apps/PicoCalc_Fuzix_v1.0.uf2 ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))  
+UF2 Path: /pico1-apps/PicoCalc_Fuzix_v1.0.uf2 ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))  
 
-## pico1-apps/PicoCalc_NES_v1.0.uf2 
+## PicoCalc_NES_v1.0.uf2 
 
 A simple NES emulator for PicoCalc, it will scan all nes files in the root of SD card.  
 Given the resource constraints of the Pico, it is recommended to only run NES games that are less than **44KB** in size.
 
-UF2 Path:  /pico1-apps/PicoCalc_NES_v1.0.uf2 ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))  
+UF2 Path: /pico1-apps/PicoCalc_NES_v1.0.uf2 ([Download](https://github.com/clockworkpi/PicoCalc/tree/master/Bin/PicoCalc%20SD/pico1-apps))  
 
 ## picolua_daf20a2.uf2  
 
