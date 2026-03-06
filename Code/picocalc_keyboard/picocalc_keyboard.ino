@@ -44,6 +44,12 @@ uint8_t js_bits=0xff;// c64 joystick bits
 
 unsigned long time_uptime_ms() { return millis(); }
 
+void nbDelay_ms(int n)
+{
+  unsigned long last_tick = millis();
+  while ( (millis() - last_tick) < n);
+}
+
 void lock_cb(bool caps_changed, bool num_changed) {
   bool do_int = false;
 
@@ -97,11 +103,16 @@ static void key_cb(char key, enum key_state state) {
   //Serial1.println(key);
 }
 
+long int receiveEventTick;
+long int requestEventTick;
+
 void receiveEvent(int howMany) {
   uint8_t rcv_data[2];  // max size 2, protocol defined
   uint8_t rcv_idx;
 
   if (Wire.available() < 1) return;
+
+  receiveEventTick = millis();
 
   rcv_idx = 0;
   while (Wire.available())  // loop through all but the last
@@ -122,6 +133,10 @@ void receiveEvent(int howMany) {
   write_buffer_len = 2;
   
   switch (reg) {
+    case REG_ID_VER: {
+      write_buffer[0] = 0;
+      write_buffer[1] = BIOSVERSION;
+    } break;  
     case REG_ID_FIF: {
       const struct fifo_item item = fifo_dequeue();
       write_buffer[0] = (uint8_t)item.state;
@@ -130,7 +145,7 @@ void receiveEvent(int howMany) {
     case REG_ID_BKL: {
       if (is_write) {
         reg_set_value(REG_ID_BKL, rcv_data[1]);
-        lcd_backlight_update_reg();
+        lcd_backlight_update(0);
       }
       write_buffer[0] = reg;
       write_buffer[1] = reg_get_value(REG_ID_BKL);
@@ -197,10 +212,13 @@ void receiveEvent(int howMany) {
 
 //-this is after receiveEvent-------------------------------
 void requestEvent() {
+  requestEventTick = millis();
   if (write_buffer_len > 0 && write_buffer_len <= sizeof(write_buffer)) {
     Wire.write(write_buffer,write_buffer_len );
   } else {
-    Wire.write((uint8_t)0); // Send something minimal to avoid stalling
+	  write_buffer_len = 2;
+	  write_buffer[0]=0;
+	  write_buffer[1]=0;
   }
 }
 
@@ -461,7 +479,6 @@ void setup() {
   Wire.setSDA(PB9);
   Wire.setSCL(PB8);
   Wire.begin(SLAVE_ADDRESS);
-  Wire.setClock(10000);//It is important to set to 10Khz
   Wire.onReceive(receiveEvent);  // register event
   Wire.onRequest(requestEvent);
 
@@ -470,6 +487,7 @@ void setup() {
   bool result = PMU.begin(Wire2, AXP2101_SLAVE_ADDRESS, i2c_sda, i2c_scl);
 
   if (result == false) {
+    pmu_online = 0;
     Serial1.println("PMU is not online...");
   } else {
     pmu_online = 1;
@@ -523,7 +541,7 @@ void setup() {
 
   keyboard_init();
   keyboard_set_key_callback(key_cb);
-  lcd_backlight_update(-223);
+  lcd_backlight_update(0);
   
   digitalWrite(PA13, HIGH);
 
@@ -595,9 +613,31 @@ void check_hp_det(){
   head_phone_status = v;
   
 }
+
+void ResetI2CBus()
+{
+  Wire.end();
+  Wire.onReceive(NULL);  // register receive event
+  Wire.onRequest(NULL);  // register request event
+  nbDelay_ms(5);
+  Wire.setSDA(PB9);
+  Wire.setSCL(PB8);
+  receiveEventTick = millis();
+  requestEventTick = millis(); 
+  Wire.begin(SLAVE_ADDRESS);
+  Wire.onReceive(receiveEvent);  // register receive event
+  Wire.onRequest(requestEvent);  // register request event
+}
+
 void loop() {
   check_pmu_int();
   keyboard_process();
+  if (millis() > 10000) { 
+    if ( ((millis() - receiveEventTick) > 2500) || ((millis() - requestEventTick) > 2500)  )
+    {
+      ResetI2CBus();
+    }  
+  }
   check_hp_det();
-  delay(10);
+  nbDelay_ms(10);
 }

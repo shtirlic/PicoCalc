@@ -22,8 +22,9 @@ void lcd_backlight_update(int v) {
 
   val = reg_get_value(REG_ID_BKL);
   val += v;
-  if(val < 0) val = 0;
-  if(val > 0xff) val = 0xff;
+  val = ( val / LCD_BACKLIGHT_STEP ) * LCD_BACKLIGHT_STEP;
+  if(val < LCD_BACKLIGHT_STEP) val =  LCD_BACKLIGHT_STEP;
+  if(val > 240) val = 240;
  
   analogWriteFrequency(10000); 
   analogWrite(PA8, val);  
@@ -35,8 +36,9 @@ void kbd_backlight_update(int v){
 
   val = reg_get_value(REG_ID_BK2);
   val += v;
-  if(val < 20 ) val = 0;
-  if(val > 0xff) val = 0;
+  val = ( val / KBD_BACKLIGHT_STEP ) * KBD_BACKLIGHT_STEP;
+  if(val < KBD_BACKLIGHT_STEP) val = 0;
+  if(val > 240) val = 0;
  
   analogWriteFrequency(10000); 
   analogWrite(PC8, val);  
@@ -50,8 +52,8 @@ void kbd_backlight_update_offset(){
   
   val = reg_get_value(REG_ID_BK2);
   val += kbd_backlight_segs[kbd_backlight_offset];
-  if(val < 20 ) val = 0;
-  if(val > 0xff) val = 0;
+  if(val < 0x20) val = 0;
+  if(val > 0xf0) val = 0;
  
   analogWriteFrequency(10000); 
   analogWrite(PC8, val);  

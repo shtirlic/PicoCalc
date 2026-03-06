@@ -1,7 +1,9 @@
 #ifndef CONF_APP_H
 #define CONF_APP_H
 
-#define SLAVE_ADDRESS      0x1F
+#define BIOSVERSION      0x16
+
+#define SLAVE_ADDRESS    0x1F
 #define FIFO_SIZE        31
 
 #define INT_DURATION_MS  1
@@ -20,7 +22,8 @@
 
 
 #define LOW_BAT_VAL 20
-#define LCD_BACKLIGHT_STEP 10
+#define LCD_BACKLIGHT_STEP 16
+#define KBD_BACKLIGHT_STEP 32
 
 
 #define bitRead(value, bit) (((value) >> (bit)) & 0x01)

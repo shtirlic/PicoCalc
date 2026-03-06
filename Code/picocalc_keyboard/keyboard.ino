@@ -176,7 +176,7 @@ static void transition_to(struct list_item * const p_item, const enum key_state 
                 lcd_backlight_update(LCD_BACKLIGHT_STEP);
               }else if(chr == ' '){
                 //loop update keyboard backlight
-                kbd_backlight_update_offset();
+                kbd_backlight_update(KBD_BACKLIGHT_STEP);
               }else if(chr == 'B'){
                 show_bat_segs();
               }
