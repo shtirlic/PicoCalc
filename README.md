@@ -2,6 +2,57 @@
 
 ![picocalc](https://github.com/clockworkpi/PicoCalc/blob/master/wiki/PicoCalc.png)
 
+
+## Repository Structure
+
+This repository is organized into several main directories, each serving a specific purpose in the PicoCalc project:
+
+### `Bin/`
+
+Prebuilt binary files and firmware images.
+
+* Contains ready-to-use firmware (e.g. .uf2, .bin, .hex)
+
+* Useful for users who want to flash the device directly without building from source
+
+* May include release builds and test/debug versions
+
+## `Code/`
+
+Source code for firmware and software components.
+
+* Main application logic for PicoCalc
+
+* Hardware drivers and low-level interfaces
+
+* Build configurations and toolchain setup
+
+* May include experimental features and development branches
+
+This is the directory you should look at if you want to:
+
+* Modify functionality
+
+* Add features
+
+* Rebuild firmware
+
+
+## `wiki/`
+
+Project documentation and additional resources.
+
+* Usage guides
+
+* Development notes
+
+* Design explanations
+
+* Troubleshooting and FAQs
+
+This section is intended to complement the README with more detailed or evolving documentation.
+
+
 ---
 
 ## 📌 Features
@@ -30,3 +81,9 @@ See the [Code](https://github.com/clockworkpi/PicoCalc/tree/master/Code) directo
 - Forum: [ClockworkPi Community](https://forum.clockworkpi.com/)
 - GitHub Issues: [Report Bugs & Features](https://github.com/clockworkpi/PicoCalc/issues)
 - Wiki: [Wiki](https://github.com/clockworkpi/PicoCalc/wiki)  
+
+
+##  Download the latest firmware & SD card files
+
+Go to → [Releases page](https://github.com/clockworkpi/PicoCalc/releases)  
+
