@@ -72,7 +72,7 @@ PicoCalc supports **C/C++ development** via Pico SDK,The firmware can be modifie
 - I²C/SPI communication for interfacing with external sensors.
 - Keyboard remapping and custom UI modifications. 
 
-See the [Code](https://github.com/clockworkpi/PicoCalc/tree/master/Code) directory for sample applications.
+See the [Code](https://github.com/clockworkpi/PicoCalc/tree/master/Code) directory and [Wiki](https://github.com/clockworkpi/PicoCalc/wiki) for sample applications and quick start.
 
 ---
 
