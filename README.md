@@ -29,3 +29,4 @@ See the [Code](https://github.com/clockworkpi/PicoCalc/tree/master/Code) directo
 - Official website: [clockworkpi.com](https://www.clockworkpi.com/)
 - Forum: [ClockworkPi Community](https://forum.clockworkpi.com/)
 - GitHub Issues: [Report Bugs & Features](https://github.com/clockworkpi/PicoCalc/issues)
+- Wiki: [Wiki](https://github.com/clockworkpi/PicoCalc/wiki)  
