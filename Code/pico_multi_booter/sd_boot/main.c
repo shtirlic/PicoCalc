@@ -190,7 +190,8 @@ static bool is_valid_application(uint32_t *app_location)
 {
     // Check that the initial stack pointer is within a plausible RAM region (assumed range for Pico: 0x20000000 to 0x20040000)
     uint32_t stack_pointer = app_location[0];
-    if (stack_pointer < 0x20000000 || stack_pointer > MAX_RAM)
+	
+    if (stack_pointer < 0x20000000 || stack_pointer > MAX_RAM + 2*4*1024) // MAX_RAM + 8KB
     {
         return false;
     }
